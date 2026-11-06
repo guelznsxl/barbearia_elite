@@ -1,0 +1,7 @@
+1. Abra a pasta principal no VS Code.
+2. Abra o terminal nessa pasta.
+3. py -m venv venv
+4. venv\\Scripts\\activate
+5. pip install -r requirements.txt
+6. py py/app.py
+7. Acesse http://127.0.0.1:5000

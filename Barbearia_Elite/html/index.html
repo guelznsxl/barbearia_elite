@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Elite | Administração</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="marca"><span class="simbolo">BE</span><div><strong>BARBEARIA ELITE</strong><small>PAINEL DE ADMINISTRAÇÃO</small></div></div>
+        <span class="estado">● Sistema online</span>
+    </header>
+
+    <main class="container">
+        <section class="boas-vindas">
+            <div><p class="sobretitulo">GERENCIAMENTO</p><h1>Visão geral</h1><p>Organize os atendimentos da sua barbearia.</p></div>
+            <div class="data-hoje" id="dataHoje"></div>
+        </section>
+
+        <section class="resumos">
+            <article class="cartao-resumo"><span>Clientes</span><strong id="totalClientes">0</strong><small>Cadastrados</small></article>
+            <article class="cartao-resumo"><span>Barbeiros</span><strong id="totalBarbeiros">0</strong><small>Profissionais</small></article>
+            <article class="cartao-resumo"><span>Serviços</span><strong id="totalServicos">0</strong><small>Disponíveis</small></article>
+            <article class="cartao-resumo destaque"><span>Agendamentos</span><strong id="totalAgendamentos">0</strong><small>Registrados</small></article>
+        </section>
+
+        <nav class="abas">
+            <button class="aba ativa" data-alvo="agendamentos">Agendamentos</button>
+            <button class="aba" data-alvo="clientes">Clientes</button>
+            <button class="aba" data-alvo="barbeiros">Barbeiros</button>
+            <button class="aba" data-alvo="servicos">Serviços</button>
+        </nav>
+
+        <section id="painel-agendamentos" class="painel">
+            <div class="titulo-secao"><div><p class="sobretitulo">AGENDA</p><h2>Novo agendamento</h2></div></div>
+            <form id="formAgendamento" class="formulario grade-form">
+                <label>Cliente<select id="agCliente" required></select></label>
+                <label>Barbeiro<select id="agBarbeiro" required></select></label>
+                <label>Serviço<select id="agServico" required></select></label>
+                <label>Data<input id="agData" type="date" required></label>
+                <label>Horário<input id="agHorario" type="time" required></label>
+                <button class="botao primario" type="submit">Criar agendamento</button>
+            </form>
+            <div class="titulo-secao espacamento"><div><p class="sobretitulo">PROGRAMAÇÃO</p><h2>Agendamentos registrados</h2></div></div>
+            <div class="tabela-area"><table><thead><tr><th>Cliente</th><th>Barbeiro</th><th>Serviço</th><th>Data</th><th>Horário</th><th>Status</th><th>Ações</th></tr></thead><tbody id="listaAgendamentos"></tbody></table></div>
+        </section>
+
+        <section id="painel-clientes" class="painel escondido">
+            <div class="titulo-secao"><div><p class="sobretitulo">CADASTRO</p><h2>Clientes</h2></div></div>
+            <form id="formCliente" class="formulario grade-form">
+                <label>Nome<input id="clienteNome" required placeholder="Nome completo"></label>
+                <label>Telefone<input id="clienteTelefone" required placeholder="(00) 00000-0000"></label>
+                <label>E-mail<input id="clienteEmail" type="email" placeholder="email@exemplo.com"></label>
+                <button class="botao primario" type="submit">Cadastrar cliente</button>
+            </form>
+            <div class="tabela-area"><table><thead><tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr></thead><tbody id="listaClientes"></tbody></table></div>
+        </section>
+
+        <section id="painel-barbeiros" class="painel escondido">
+            <div class="titulo-secao"><div><p class="sobretitulo">EQUIPE</p><h2>Barbeiros</h2></div></div>
+            <form id="formBarbeiro" class="formulario grade-form">
+                <label>Nome<input id="barbeiroNome" required placeholder="Nome do profissional"></label>
+                <label>Telefone<input id="barbeiroTelefone" placeholder="Telefone"></label>
+                <label>Especialidade<input id="barbeiroEspecialidade" placeholder="Ex.: Corte e barba"></label>
+                <button class="botao primario" type="submit">Cadastrar barbeiro</button>
+            </form>
+            <div class="tabela-area"><table><thead><tr><th>Nome</th><th>Telefone</th><th>Especialidade</th><th>Ações</th></tr></thead><tbody id="listaBarbeiros"></tbody></table></div>
+        </section>
+
+        <section id="painel-servicos" class="painel escondido">
+            <div class="titulo-secao"><div><p class="sobretitulo">CATÁLOGO</p><h2>Serviços</h2></div></div>
+            <form id="formServico" class="formulario grade-form">
+                <label>Nome<input id="servicoNome" required placeholder="Ex.: Corte masculino"></label>
+                <label>Preço (R$)<input id="servicoPreco" type="number" min="0" step="0.01" required></label>
+                <label>Duração (minutos)<input id="servicoDuracao" type="number" min="1" required></label>
+                <label>Descrição<input id="servicoDescricao" placeholder="Descrição do serviço"></label>
+                <button class="botao primario" type="submit">Cadastrar serviço</button>
+            </form>
+            <div class="tabela-area"><table><thead><tr><th>Serviço</th><th>Descrição</th><th>Preço</th><th>Duração</th><th>Ações</th></tr></thead><tbody id="listaServicos"></tbody></table></div>
+        </section>
+        <p id="mensagem" class="mensagem" aria-live="polite"></p>
+    </main>
+    <footer>BARBEARIA ELITE · SISTEMA DE GERENCIAMENTO</footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
