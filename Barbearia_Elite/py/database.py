@@ -5,7 +5,7 @@ import sqlite3
 PASTA_PROJETO = Path(__file__).resolve().parent.parent
 
 # pasta e arquivos do banco de dados
-PASTA_BANCO = PASTA_PROJETO / "banco"
+PASTA_BANCO = PASTA_PROJETO / "sql" / "banco"
 DATABASE = PASTA_BANCO / "barbearia.db"
 ARQUIVO_SQL = PASTA_BANCO / "schema.sql"
 
