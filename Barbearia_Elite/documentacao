@@ -1,1 +1,113 @@
+# Documentação do Projeto — Barbearia Elite
+
+## 1. Identificação
+
+**Nome do projeto:** Barbearia Elite  
+**Tipo:** Sistema web de gerenciamento de barbearia  
+**Área:** Desenvolvimento de Sistemas  
+**Linguagens e tecnologias:** Python, Flask, SQLite, HTML, CSS e JavaScript.
+
+## 2. Apresentação
+
+A Barbearia Elite é um sistema web criado com a proposta de auxiliar na organização das informações de uma barbearia. O projeto reúne uma interface web e uma aplicação desenvolvida em Python, conectada a um banco de dados SQLite.
+
+## 3. Objetivo geral
+
+Desenvolver um sistema web que facilite o registro e a consulta das informações relacionadas à rotina de uma barbearia.
+
+## 4. Objetivos específicos
+
+- Organizar os dados dos clientes.
+- Manter os registros dos barbeiros.
+- Registrar os serviços oferecidos.
+- Organizar os agendamentos.
+- Aplicar conhecimentos de programação, banco de dados e desenvolvimento web.
+- Disponibilizar o sistema pela internet.
+
+## 5. Funcionalidades e módulos
+
+O projeto foi organizado em módulos relacionados às entidades principais do banco de dados:
+
+### Clientes
+Área destinada aos dados dos clientes da barbearia.
+
+### Barbeiros
+Área destinada aos dados dos profissionais que trabalham na barbearia.
+
+### Serviços
+Área destinada ao registro dos serviços oferecidos.
+
+### Agendamentos
+Área destinada ao registro dos horários e dos relacionamentos entre clientes, barbeiros e serviços.
+
+> A disponibilidade de cada operação (cadastrar, listar, editar ou excluir) deve ser conferida na versão publicada do sistema. Registre aqui somente as operações que estiverem funcionando no projeto.
+
+## 6. Tecnologias utilizadas
+
+| Tecnologia | Utilização |
+|---|---|
+| Python | Lógica e funcionamento do sistema |
+| Flask | Criação das rotas e aplicação web |
+| SQLite | Armazenamento dos dados |
+| HTML | Estrutura das páginas |
+| CSS | Estilização das páginas |
+| JavaScript | Interações e comunicação com o backend |
+| GitHub | Controle e armazenamento do código |
+| Render | Hospedagem da aplicação |
+
+## 7. Banco de dados
+
+O sistema utiliza SQLite. O arquivo `database.py` concentra a configuração do caminho do banco, a conexão e a execução do script de criação das tabelas.
+
+As entidades principais são:
+
+- **CLIENTES**
+- **BARBEIROS**
+- **SERVICOS**
+- **AGENDAMENTOS**
+
+O relacionamento entre essas entidades está representado no Diagrama Entidade-Relacionamento (DER) elaborado para o projeto.
+
+## 8. Arquitetura e organização dos arquivos
+
+- `html/`: páginas da interface.
+- `css/`: estilos visuais.
+- `js/`: scripts executados no navegador.
+- `py/`: aplicação Flask, conexão com o banco e regras do sistema.
+- `sql/banco/`: script SQL e arquivos relacionados ao banco.
+- `requirements.txt`: bibliotecas necessárias para executar a aplicação.
+
+## 9. Diagramas
+
+O projeto possui os seguintes diagramas, desenvolvidos pelo aluno:
+
+- **DER:** representa as entidades, atributos e relacionamentos do banco de dados.
+- **UML:** representa a estrutura do sistema e seus elementos.
+
+As imagens ou arquivos exportados dos diagramas podem ser adicionados nesta pasta para facilitar a consulta.
+
+## 10. Hospedagem
+
+A aplicação foi publicada utilizando a plataforma Render, conectada ao repositório do GitHub. O serviço utiliza Gunicorn para iniciar a aplicação Flask.
+
+**Comando de inicialização utilizado:**
+
+```bash
+gunicorn --chdir py app:app
+```
+
+## 11. Testes
+
+Os testes devem ser realizados no endereço publicado e devem verificar, conforme as funcionalidades implementadas:
+
+1. Se a página inicial abre corretamente.
+2. Se as páginas e menus carregam.
+3. Se os formulários aceitam os dados esperados.
+4. Se os registros são gravados no banco de dados.
+5. Se os dados podem ser consultados.
+6. Se as operações de edição e exclusão funcionam, caso estejam disponíveis.
+
+## 12. Considerações finais
+
+O desenvolvimento da Barbearia Elite permitiu aplicar conhecimentos de desenvolvimento web, programação em Python, integração com banco de dados e publicação de aplicações. O projeto também ajudou a compreender como diferentes tecnologias trabalham juntas para formar um sistema web.
 
