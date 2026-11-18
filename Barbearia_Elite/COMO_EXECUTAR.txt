@@ -1,84 +1,45 @@
-# Como executar o projeto — Barbearia Elite
 
-Este documento apresenta um roteiro para executar o projeto localmente.
 
-## 1. Requisitos
+# COMO ACESSAR E EXECUTAR O SISTEMA PELO LINK DO RENDER 
 
-- Python instalado.
-- Git (opcional, caso o projeto seja baixado pelo repositório).
-- Editor de código, como Visual Studio Code.
+## Barbearia Elite
 
-## 2. Obter os arquivos
+O sistema Barbearia Elite está hospedado na plataforma Render, permitindo o acesso diretamente pelo navegador, sem precisar instalar programas ou configurar o ambiente local.
 
-Baixe o projeto pelo GitHub ou clone o repositório:
+### 1. Acessar o sistema
 
-```bash
-git clone https://github.com/guelznsxl/barbearia_elite.git
-```
+Para acessar, basta abrir o navegador e entrar no endereço:
 
-Entre na pasta do projeto. Se o repositório tiver uma pasta externa chamada `Barbearia_Elite`, entre nela antes de continuar.
+https://barbearia-elite-0dr0.onrender.com/
 
-## 3. Criar um ambiente virtual (recomendado)
+### 2. Iniciar o sistema
 
-No terminal, dentro da pasta principal do projeto:
+Após acessar o endereço, aguarde o carregamento da página.
 
-```bash
-python -m venv venv
-```
+**Observação:** Como o serviço utiliza o plano gratuito do Render, pode ser necessário aguardar alguns instantes caso esteja inativo.
 
-No Windows, ative o ambiente:
+### 3. Utilizar as funcionalidades
 
-```bash
-venv\Scripts\activate
-```
+Com o sistema aberto, é possível utilizar as funcionalidades disponíveis:
 
-## 4. Instalar as dependências
+- Cadastrar e consultar clientes;
+- Cadastrar e consultar barbeiros;
+- Cadastrar e consultar serviços;
+- Criar e consultar agendamentos;
+- Atualizar e excluir registros, conforme as funcionalidades disponíveis.
 
-```bash
-pip install -r requirements.txt
-```
+### 4. Requisitos para acesso
 
-## 5. Conferir os arquivos do banco
+- Computador, tablet ou celular;
+- Navegador de internet;
+- Conexão com a internet.
 
-O arquivo de criação das tabelas deve estar em:
+Não é necessário instalar Python, Flask, SQLite ou outras ferramentas para utilizar o sistema hospedado.
 
-```text
-sql/banco/schema.sql
-```
+### 5. Hospedagem
 
-O arquivo `py/database.py` deve apontar para esse mesmo caminho. No projeto atual, a configuração esperada é:
+O projeto foi publicado utilizando a plataforma Render, responsável por disponibilizar o sistema na internet.
 
-```python
-PASTA_BANCO = PASTA_PROJETO / "sql" / "banco"
-DATABASE = PASTA_BANCO / "barbearia.db"
-ARQUIVO_SQL = PASTA_BANCO / "schema.sql"
-```
+**Link de acesso:** https://barbearia-elite-0dr0.onrender.com/
 
-O banco SQLite é criado/aberto pela função `criar_banco()` da aplicação.
 
-## 6. Iniciar a aplicação
-
-A partir da pasta principal do projeto, execute:
-
-```bash
-python py/app.py
-```
-
-Se o arquivo `app.py` estiver configurado para iniciar o servidor local, o terminal mostrará o endereço de acesso.
-
-Abra no navegador o endereço local indicado no terminal, normalmente:
-
-```text
-http://127.0.0.1:5000
-```
-
-## 7. Hospedagem
-
-A versão publicada está hospedada no Render. Para conferir o endereço atual, acesse o painel do Render e abra o serviço da Barbearia Elite.
-
-## 8. Solução de problemas
-
-- **Erro de módulo não encontrado:** confira se o ambiente virtual está ativo e execute novamente `pip install -r requirements.txt`.
-- **Erro ao abrir o banco:** confira se a pasta `sql/banco` existe e se contém `schema.sql`.
-- **Página não abre:** confira a mensagem exibida no terminal e os logs da aplicação.
-- **Porta em uso:** encerre outro processo que esteja utilizando a mesma porta ou configure uma porta diferente conforme o código da aplicação.
