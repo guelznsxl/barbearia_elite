@@ -1,52 +1,98 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entrar | Barbearia Elite</title>
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Elite | Login</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="login-body">
-  <main class="login-layout">
-    <section class="login-brand">
-      <div class="brand-mark">BE</div>
-      <p class="eyebrow">EXPERIÊNCIA • ESTILO • EXCELÊNCIA</p>
-      <h1>BARBEARIA<br><span>ELITE</span></h1>
-      <p class="login-intro">Gestão inteligente para uma experiência de alto padrão.</p>
-      <div class="login-line"></div>
-      <small>PAINEL DE ADMINISTRAÇÃO</small>
-    </section>
 
-    <section class="login-card">
-      <div class="mobile-mark">BE</div>
-      <p class="eyebrow">ACESSO RESTRITO</p>
-      <h2>Bem-vindo de volta</h2>
-      <p class="muted">Entre com suas credenciais de administrador.</p>
+    <main class="login-page">
 
-      <form id="formLogin" class="form-stack">
-        <label>Usuário
-          <input id="usuario" name="usuario" autocomplete="username" placeholder="Seu usuário" required>
-        </label>
+        <section class="login-presentation">
+            <div class="login-logo">
+                <span>BE</span>
+            </div>
 
-        <label>Senha
-          <input id="senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha" required>
-        </label>
+            <p class="login-overline">BARBEARIA EXCLUSIVA</p>
 
-        <button class="btn btn-primary btn-wide" type="submit">
-          Entrar no painel <span>→</span>
-        </button>
-      </form>
+            <h1>Estilo, precisão<br>e excelência.</h1>
 
-      <p id="loginMensagem" class="feedback" aria-live="polite"></p>
-      <div class="login-foot">
-        <span class="status-dot"></span>
-        Acesso protegido para administradores
-      </div>
-    </section>
-  </main>
+            <p class="login-description">
+                Gerencie sua barbearia com praticidade,
+                organização e uma experiência profissional.
+            </p>
 
-  <script src="/js/script.js"></script>
+            <div class="login-decoration">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <p class="login-footer-text">
+                BARBEARIA ELITE · SISTEMA DE GESTÃO
+            </p>
+        </section>
+
+        <section class="login-form-area">
+
+            <div class="login-card">
+
+                <div class="login-card-heading">
+                    <span class="login-label">ÁREA RESTRITA</span>
+                    <h2>Bem-vindo de volta.</h2>
+                    <p>Entre com suas credenciais de administrador.</p>
+                </div>
+
+                <form id="formLogin">
+
+                    <div class="login-input-group">
+                        <label for="usuario">Usuário</label>
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Digite seu usuário"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-input-group">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <p id="loginMensagem"></p>
+
+                    <button type="submit" class="login-button">
+                        ACESSAR SISTEMA
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-security">
+                    <span>●</span>
+                    Acesso exclusivo para administradores
+                </div>
+
+            </div>
+
+            <p class="login-copyright">
+                © 2026 Barbearia Elite. Todos os direitos reservados.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
-
