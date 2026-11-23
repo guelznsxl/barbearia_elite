@@ -1,38 +1,30 @@
-from pathlib import Path
+
+import os
 import sqlite3
 
-# caminho principal da pasta do projeto
-PASTA_PROJETO = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# pasta e arquivos do banco de dados
-PASTA_BANCO = PASTA_PROJETO / "sql" / "banco"
-DATABASE = PASTA_BANCO / "barbearia.db"
-ARQUIVO_SQL = PASTA_BANCO / "schema.sql"
+CAMINHO_BANCO = os.path.join(BASE_DIR, "sql", "barbearia.db")
+CAMINHO_SCHEMA = os.path.join(BASE_DIR, "sql", "schema.sql")
 
 
 def conectar():
-    # cria a pasta banco caso ela ainda nao exista
-    PASTA_BANCO.mkdir(parents=True, exist_ok=True)
-
-    conexao = sqlite3.connect(str(DATABASE))
+    os.makedirs(os.path.dirname(CAMINHO_BANCO), exist_ok=True)
+    conexao = sqlite3.connect(CAMINHO_BANCO)
     conexao.row_factory = sqlite3.Row
     conexao.execute("PRAGMA foreign_keys = ON")
-
     return conexao
 
 
 def criar_banco():
-    # confere se o arquivo de criacao das tabelas existe
-    if not ARQUIVO_SQL.exists():
+    if not os.path.exists(CAMINHO_SCHEMA):
         raise FileNotFoundError(
-            f"Arquivo schema.sql nao encontrado em: {ARQUIVO_SQL}"
+            f"Arquivo schema.sql não encontrado em: {CAMINHO_SCHEMA}"
         )
 
+    with open(CAMINHO_SCHEMA, "r", encoding="utf-8") as arquivo:
+        sql = arquivo.read()
+
     conexao = conectar()
-
-    try:
-        with open(ARQUIVO_SQL, "r", encoding="utf-8") as arquivo:
-            conexao.executescript(arquivo.read())
-    finally:
-        conexao.close()
-
+    conexao.executescript(sql)
+    conexao.close()
