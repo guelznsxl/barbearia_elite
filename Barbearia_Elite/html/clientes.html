@@ -1,1 +1,147 @@
 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | Barbearia Elite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-page="clientes">
+
+<div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+        <a class="brand" href="/">
+            <span class="brand-mark">BE</span>
+            <span>
+                <b>BARBEARIA ELITE</b>
+                <small>GESTÃO PREMIUM</small>
+            </span>
+        </a>
+
+        <div class="side-label">MENU PRINCIPAL</div>
+
+        <nav class="side-nav">
+            <a class="nav-link" href="/">⌂ Visão geral</a>
+            <a class="nav-link active" href="/clientes">♙ Clientes</a>
+            <a class="nav-link" href="/barbeiros">✂ Barbeiros</a>
+            <a class="nav-link" href="/servicos">◇ Serviços</a>
+            <a class="nav-link" href="/agendamentos">▦ Agendamentos</a>
+        </nav>
+
+        <div class="side-label side-label-bottom">SISTEMA</div>
+        <nav class="side-nav">
+            <a class="nav-link" href="/admin">⚙ Administração</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div>
+                <b>Administrador</b>
+                <small>Acesso autorizado</small>
+            </div>
+            <button class="icon-button" id="btnSair" title="Sair">↗</button>
+        </div>
+    </aside>
+
+    <main class="main-area">
+
+        <header class="topbar">
+            <button class="mobile-menu" id="menuToggle">☰</button>
+            <div>
+                <span class="breadcrumb">GERENCIAMENTO /</span>
+                <b>Clientes</b>
+            </div>
+            <div class="topbar-right">
+                <span class="live-pill"><i></i> Sistema online</span>
+                <span class="top-avatar">AD</span>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">RELACIONAMENTO</p>
+                    <h1>Clientes</h1>
+                    <p class="muted">Gerencie os clientes cadastrados na Barbearia Elite.</p>
+                </div>
+                <div class="date-chip">CADASTROS</div>
+            </section>
+
+            <section class="panel-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">NOVO REGISTRO</p>
+                        <h2>Cadastrar cliente</h2>
+                    </div>
+                    <span class="stat-icon">♙</span>
+                </div>
+
+                <form id="formCliente" class="form-grid">
+                    <label>
+                        Nome completo
+                        <input type="text" id="clienteNome" placeholder="Nome do cliente" required>
+                    </label>
+
+                    <label>
+                        Telefone
+                        <input type="tel" id="clienteTelefone" placeholder="(00) 00000-0000" required>
+                    </label>
+
+                    <label class="full-field">
+                        E-mail
+                        <input type="email" id="clienteEmail" placeholder="cliente@email.com">
+                    </label>
+
+                    <div class="form-actions full-field">
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar cliente →</button>
+                    </div>
+                </form>
+
+                <p id="mensagemCliente" class="feedback" aria-live="polite"></p>
+            </section>
+
+            <section class="panel-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">BASE DE DADOS</p>
+                        <h2>Clientes cadastrados</h2>
+                    </div>
+                    <button class="btn btn-secondary" id="btnAtualizarClientes">↻ Atualizar</button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>E-mail</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaClientes">
+                            <tr>
+                                <td colspan="5">Carregando clientes...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="app-footer">
+                BARBEARIA ELITE <span>•</span> GERENCIAMENTO DE CLIENTES
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
