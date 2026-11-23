@@ -7,11 +7,14 @@
     <title>Visão geral | Barbearia Elite</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body data-page="dashboard">
 
 <div class="app-shell">
 
+    <!-- MENU LATERAL -->
     <aside class="sidebar" id="sidebar">
+
         <a class="brand" href="/">
             <span class="brand-mark">BE</span>
             <span>
@@ -23,21 +26,27 @@
         <div class="side-label">MENU PRINCIPAL</div>
 
         <nav class="side-nav">
+
             <a class="nav-link active" href="/">
                 <span class="nav-icon">⌂</span> Visão geral
             </a>
+
             <a class="nav-link" href="/clientes">
                 <span class="nav-icon">♙</span> Clientes
             </a>
+
             <a class="nav-link" href="/barbeiros">
                 <span class="nav-icon">✂</span> Barbeiros
             </a>
+
             <a class="nav-link" href="/servicos">
                 <span class="nav-icon">◇</span> Serviços
             </a>
+
             <a class="nav-link" href="/agendamentos">
                 <span class="nav-icon">▦</span> Agendamentos
             </a>
+
         </nav>
 
         <div class="side-label side-label-bottom">SISTEMA</div>
@@ -49,129 +58,203 @@
         </nav>
 
         <div class="sidebar-bottom">
+
             <div class="admin-avatar">AD</div>
+
             <div>
                 <b>Administrador</b>
                 <small>Acesso autorizado</small>
             </div>
-            <button class="icon-button" id="btnSair" title="Sair">↗</button>
+
+            <button class="icon-button" id="btnSair" title="Sair">
+                ↗
+            </button>
+
         </div>
+
     </aside>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-area">
 
         <header class="topbar">
+
             <button class="mobile-menu" id="menuToggle">☰</button>
+
             <div>
                 <span class="breadcrumb">PAINEL /</span>
                 <b>Visão geral</b>
             </div>
+
             <div class="topbar-right">
-                <span class="live-pill"><i></i> Sistema online</span>
+
+                <span class="live-pill">
+                    <i></i> Sistema online
+                </span>
+
                 <span class="top-avatar">AD</span>
+
             </div>
+
         </header>
 
         <div class="content">
 
+            <!-- APRESENTAÇÃO -->
             <section class="page-heading">
+
                 <div>
                     <p class="eyebrow">SEJA BEM-VINDO</p>
+
                     <h1>Visão geral</h1>
-                    <p class="muted">Acompanhe os principais números da sua barbearia.</p>
+
+                    <p class="muted">
+                        Acompanhe os principais números da sua barbearia.
+                    </p>
                 </div>
+
                 <div class="date-chip" id="dataHoje"></div>
+
             </section>
 
+            <!-- INDICADORES DO SISTEMA -->
             <section class="stats-grid">
 
                 <article class="stat-card">
+
                     <div class="stat-top">
                         <span>CLIENTES</span>
                         <span class="stat-icon">♙</span>
                     </div>
+
                     <strong id="totalClientes">0</strong>
+
                     <small>Clientes cadastrados</small>
+
                 </article>
 
                 <article class="stat-card">
+
                     <div class="stat-top">
                         <span>BARBEIROS</span>
                         <span class="stat-icon">✂</span>
                     </div>
+
                     <strong id="totalBarbeiros">0</strong>
+
                     <small>Profissionais ativos</small>
+
                 </article>
 
                 <article class="stat-card">
+
                     <div class="stat-top">
                         <span>SERVIÇOS</span>
                         <span class="stat-icon">◇</span>
                     </div>
+
                     <strong id="totalServicos">0</strong>
+
                     <small>Opções disponíveis</small>
+
                 </article>
 
                 <article class="stat-card stat-featured">
+
                     <div class="stat-top">
                         <span>AGENDAMENTOS</span>
                         <span class="stat-icon">▦</span>
                     </div>
+
                     <strong id="totalAgendamentos">0</strong>
+
                     <small>Registros no sistema</small>
+
                 </article>
 
             </section>
 
+            <!-- ACESSO RÁPIDO -->
             <section class="panel-card">
+
                 <div class="section-heading">
+
                     <div>
                         <p class="eyebrow">ACESSO RÁPIDO</p>
                         <h2>Gerencie sua barbearia</h2>
                     </div>
+
                 </div>
 
                 <div class="quick-grid">
 
                     <a class="quick-card" href="/clientes">
+
                         <span class="quick-icon">♙</span>
+
                         <b>Clientes</b>
+
                         <small>Cadastros e contatos</small>
+
                         <span class="quick-arrow">↗</span>
+
                     </a>
 
                     <a class="quick-card" href="/barbeiros">
+
                         <span class="quick-icon">✂</span>
+
                         <b>Barbeiros</b>
+
                         <small>Equipe profissional</small>
+
                         <span class="quick-arrow">↗</span>
+
                     </a>
 
                     <a class="quick-card" href="/servicos">
+
                         <span class="quick-icon">◇</span>
+
                         <b>Serviços</b>
+
                         <small>Preços e duração</small>
+
                         <span class="quick-arrow">↗</span>
+
                     </a>
 
                     <a class="quick-card" href="/agendamentos">
+
                         <span class="quick-icon">▦</span>
+
                         <b>Agendamentos</b>
+
                         <small>Agenda de atendimento</small>
+
                         <span class="quick-arrow">↗</span>
+
                     </a>
 
                 </div>
+
             </section>
 
             <div id="mensagem" class="feedback"></div>
 
+            <!-- RODAPÉ -->
             <footer class="app-footer">
-                BARBEARIA ELITE <span>•</span> SISTEMA DE GERENCIAMENTO
+
+                BARBEARIA ELITE
+                <span>•</span>
+                SISTEMA DE GERENCIAMENTO
+
             </footer>
 
         </div>
+
     </main>
+
 </div>
 
 <script src="/js/script.js"></script>
