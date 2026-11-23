@@ -1,87 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia Elite | Administração</title>
+    <title>Visão geral | Barbearia Elite</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <header class="topo">
-        <div class="marca"><span class="simbolo">BE</span><div><strong>BARBEARIA ELITE</strong><small>PAINEL DE ADMINISTRAÇÃO</small></div></div>
-        <span class="estado">● Sistema online</span>
-    </header>
+<body data-page="dashboard">
 
-    <main class="container">
-        <section class="boas-vindas">
-            <div><p class="sobretitulo">GERENCIAMENTO</p><h1>Visão geral</h1><p>Organize os atendimentos da sua barbearia.</p></div>
-            <div class="data-hoje" id="dataHoje"></div>
-        </section>
+<div class="app-shell">
 
-        <section class="resumos">
-            <article class="cartao-resumo"><span>Clientes</span><strong id="totalClientes">0</strong><small>Cadastrados</small></article>
-            <article class="cartao-resumo"><span>Barbeiros</span><strong id="totalBarbeiros">0</strong><small>Profissionais</small></article>
-            <article class="cartao-resumo"><span>Serviços</span><strong id="totalServicos">0</strong><small>Disponíveis</small></article>
-            <article class="cartao-resumo destaque"><span>Agendamentos</span><strong id="totalAgendamentos">0</strong><small>Registrados</small></article>
-        </section>
+    <aside class="sidebar" id="sidebar">
+        <a class="brand" href="/">
+            <span class="brand-mark">BE</span>
+            <span>
+                <b>BARBEARIA ELITE</b>
+                <small>GESTÃO PREMIUM</small>
+            </span>
+        </a>
 
-        <nav class="abas">
-            <button class="aba ativa" data-alvo="agendamentos">Agendamentos</button>
-            <button class="aba" data-alvo="clientes">Clientes</button>
-            <button class="aba" data-alvo="barbeiros">Barbeiros</button>
-            <button class="aba" data-alvo="servicos">Serviços</button>
+        <div class="side-label">MENU PRINCIPAL</div>
+
+        <nav class="side-nav">
+            <a class="nav-link active" href="/">
+                <span class="nav-icon">⌂</span> Visão geral
+            </a>
+            <a class="nav-link" href="/clientes">
+                <span class="nav-icon">♙</span> Clientes
+            </a>
+            <a class="nav-link" href="/barbeiros">
+                <span class="nav-icon">✂</span> Barbeiros
+            </a>
+            <a class="nav-link" href="/servicos">
+                <span class="nav-icon">◇</span> Serviços
+            </a>
+            <a class="nav-link" href="/agendamentos">
+                <span class="nav-icon">▦</span> Agendamentos
+            </a>
         </nav>
 
-        <section id="painel-agendamentos" class="painel">
-            <div class="titulo-secao"><div><p class="sobretitulo">AGENDA</p><h2>Novo agendamento</h2></div></div>
-            <form id="formAgendamento" class="formulario grade-form">
-                <label>Cliente<select id="agCliente" required></select></label>
-                <label>Barbeiro<select id="agBarbeiro" required></select></label>
-                <label>Serviço<select id="agServico" required></select></label>
-                <label>Data<input id="agData" type="date" required></label>
-                <label>Horário<input id="agHorario" type="time" required></label>
-                <button class="botao primario" type="submit">Criar agendamento</button>
-            </form>
-            <div class="titulo-secao espacamento"><div><p class="sobretitulo">PROGRAMAÇÃO</p><h2>Agendamentos registrados</h2></div></div>
-            <div class="tabela-area"><table><thead><tr><th>Cliente</th><th>Barbeiro</th><th>Serviço</th><th>Data</th><th>Horário</th><th>Status</th><th>Ações</th></tr></thead><tbody id="listaAgendamentos"></tbody></table></div>
-        </section>
+        <div class="side-label side-label-bottom">SISTEMA</div>
 
-        <section id="painel-clientes" class="painel escondido">
-            <div class="titulo-secao"><div><p class="sobretitulo">CADASTRO</p><h2>Clientes</h2></div></div>
-            <form id="formCliente" class="formulario grade-form">
-                <label>Nome<input id="clienteNome" required placeholder="Nome completo"></label>
-                <label>Telefone<input id="clienteTelefone" required placeholder="(00) 00000-0000"></label>
-                <label>E-mail<input id="clienteEmail" type="email" placeholder="email@exemplo.com"></label>
-                <button class="botao primario" type="submit">Cadastrar cliente</button>
-            </form>
-            <div class="tabela-area"><table><thead><tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr></thead><tbody id="listaClientes"></tbody></table></div>
-        </section>
+        <nav class="side-nav">
+            <a class="nav-link" href="/admin">
+                <span class="nav-icon">⚙</span> Administração
+            </a>
+        </nav>
 
-        <section id="painel-barbeiros" class="painel escondido">
-            <div class="titulo-secao"><div><p class="sobretitulo">EQUIPE</p><h2>Barbeiros</h2></div></div>
-            <form id="formBarbeiro" class="formulario grade-form">
-                <label>Nome<input id="barbeiroNome" required placeholder="Nome do profissional"></label>
-                <label>Telefone<input id="barbeiroTelefone" placeholder="Telefone"></label>
-                <label>Especialidade<input id="barbeiroEspecialidade" placeholder="Ex.: Corte e barba"></label>
-                <button class="botao primario" type="submit">Cadastrar barbeiro</button>
-            </form>
-            <div class="tabela-area"><table><thead><tr><th>Nome</th><th>Telefone</th><th>Especialidade</th><th>Ações</th></tr></thead><tbody id="listaBarbeiros"></tbody></table></div>
-        </section>
+        <div class="sidebar-bottom">
+            <div class="admin-avatar">AD</div>
+            <div>
+                <b>Administrador</b>
+                <small>Acesso autorizado</small>
+            </div>
+            <button class="icon-button" id="btnSair" title="Sair">↗</button>
+        </div>
+    </aside>
 
-        <section id="painel-servicos" class="painel escondido">
-            <div class="titulo-secao"><div><p class="sobretitulo">CATÁLOGO</p><h2>Serviços</h2></div></div>
-            <form id="formServico" class="formulario grade-form">
-                <label>Nome<input id="servicoNome" required placeholder="Ex.: Corte masculino"></label>
-                <label>Preço (R$)<input id="servicoPreco" type="number" min="0" step="0.01" required></label>
-                <label>Duração (minutos)<input id="servicoDuracao" type="number" min="1" required></label>
-                <label>Descrição<input id="servicoDescricao" placeholder="Descrição do serviço"></label>
-                <button class="botao primario" type="submit">Cadastrar serviço</button>
-            </form>
-            <div class="tabela-area"><table><thead><tr><th>Serviço</th><th>Descrição</th><th>Preço</th><th>Duração</th><th>Ações</th></tr></thead><tbody id="listaServicos"></tbody></table></div>
-        </section>
-        <p id="mensagem" class="mensagem" aria-live="polite"></p>
+    <main class="main-area">
+
+        <header class="topbar">
+            <button class="mobile-menu" id="menuToggle">☰</button>
+            <div>
+                <span class="breadcrumb">PAINEL /</span>
+                <b>Visão geral</b>
+            </div>
+            <div class="topbar-right">
+                <span class="live-pill"><i></i> Sistema online</span>
+                <span class="top-avatar">AD</span>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">SEJA BEM-VINDO</p>
+                    <h1>Visão geral</h1>
+                    <p class="muted">Acompanhe os principais números da sua barbearia.</p>
+                </div>
+                <div class="date-chip" id="dataHoje"></div>
+            </section>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>CLIENTES</span>
+                        <span class="stat-icon">♙</span>
+                    </div>
+                    <strong id="totalClientes">0</strong>
+                    <small>Clientes cadastrados</small>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>BARBEIROS</span>
+                        <span class="stat-icon">✂</span>
+                    </div>
+                    <strong id="totalBarbeiros">0</strong>
+                    <small>Profissionais ativos</small>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>SERVIÇOS</span>
+                        <span class="stat-icon">◇</span>
+                    </div>
+                    <strong id="totalServicos">0</strong>
+                    <small>Opções disponíveis</small>
+                </article>
+
+                <article class="stat-card stat-featured">
+                    <div class="stat-top">
+                        <span>AGENDAMENTOS</span>
+                        <span class="stat-icon">▦</span>
+                    </div>
+                    <strong id="totalAgendamentos">0</strong>
+                    <small>Registros no sistema</small>
+                </article>
+
+            </section>
+
+            <section class="panel-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">ACESSO RÁPIDO</p>
+                        <h2>Gerencie sua barbearia</h2>
+                    </div>
+                </div>
+
+                <div class="quick-grid">
+
+                    <a class="quick-card" href="/clientes">
+                        <span class="quick-icon">♙</span>
+                        <b>Clientes</b>
+                        <small>Cadastros e contatos</small>
+                        <span class="quick-arrow">↗</span>
+                    </a>
+
+                    <a class="quick-card" href="/barbeiros">
+                        <span class="quick-icon">✂</span>
+                        <b>Barbeiros</b>
+                        <small>Equipe profissional</small>
+                        <span class="quick-arrow">↗</span>
+                    </a>
+
+                    <a class="quick-card" href="/servicos">
+                        <span class="quick-icon">◇</span>
+                        <b>Serviços</b>
+                        <small>Preços e duração</small>
+                        <span class="quick-arrow">↗</span>
+                    </a>
+
+                    <a class="quick-card" href="/agendamentos">
+                        <span class="quick-icon">▦</span>
+                        <b>Agendamentos</b>
+                        <small>Agenda de atendimento</small>
+                        <span class="quick-arrow">↗</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <div id="mensagem" class="feedback"></div>
+
+            <footer class="app-footer">
+                BARBEARIA ELITE <span>•</span> SISTEMA DE GERENCIAMENTO
+            </footer>
+
+        </div>
     </main>
-    <footer>BARBEARIA ELITE · SISTEMA DE GERENCIAMENTO</footer>
-    <script src="/js/script.js"></script>
+</div>
+
+<script src="/js/script.js"></script>
+
 </body>
 </html>
