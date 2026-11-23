@@ -742,3 +742,289 @@ tbody tr:hover {
         padding: 18px 12px;
     }
 }
+
+/* ========================================
+   LOGIN - BARBEARIA ELITE
+======================================== */
+
+body.login-body {
+    min-height: 100vh;
+    background: #080808;
+    color: #f5f5f5;
+    margin: 0;
+}
+
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #080808;
+}
+
+/* LADO DE APRESENTACAO */
+
+.login-presentation {
+    min-height: 100vh;
+    padding: 70px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212,175,55,0.13), transparent 40%),
+        linear-gradient(145deg, #171717, #080808 75%);
+    border-right: 1px solid #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-logo {
+    width: 65px;
+    height: 65px;
+    background: #d4af37;
+    color: #080808;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 30px rgba(212,175,55,0.18);
+}
+
+.login-overline,
+.login-label {
+    color: #d4af37;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.login-presentation h1 {
+    color: #ffffff;
+    font-size: clamp(35px, 4vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+    font-weight: 800;
+}
+
+.login-description {
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 430px;
+}
+
+.login-decoration {
+    display: flex;
+    gap: 9px;
+    margin-top: 40px;
+}
+
+.login-decoration span {
+    display: block;
+    height: 4px;
+    width: 35px;
+    border-radius: 5px;
+    background: #d4af37;
+}
+
+.login-decoration span:nth-child(2) {
+    width: 18px;
+    opacity: 0.6;
+}
+
+.login-decoration span:nth-child(3) {
+    width: 10px;
+    opacity: 0.3;
+}
+
+.login-footer-text {
+    color: #666666;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 70px;
+}
+
+/* LADO DO FORMULARIO */
+
+.login-form-area {
+    min-height: 100vh;
+    padding: 40px;
+    background: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 38px;
+    background: #141414;
+    border: 1px solid #303030;
+    border-radius: 17px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.login-card-heading {
+    margin-bottom: 32px;
+}
+
+.login-card-heading .login-label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.login-card-heading h2 {
+    color: #ffffff;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.login-card-heading p {
+    color: #999999;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* CAMPOS */
+
+.login-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+.login-input-group label {
+    color: #dddddd;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.login-input-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 15px;
+    background: #202020;
+    color: #ffffff;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.login-input-group input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.10);
+}
+
+.login-input-group input::placeholder {
+    color: #777777;
+}
+
+/* MENSAGEM DE LOGIN */
+
+#loginMensagem {
+    color: #ff7777;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+/* BOTAO */
+
+.login-button {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 18px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #111111;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.25s;
+}
+
+.login-button:hover {
+    background: #f0d477;
+    transform: translateY(-2px);
+}
+
+.login-button span {
+    font-size: 20px;
+}
+
+/* SEGURANCA E RODAPE */
+
+.login-security {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 25px;
+    color: #888888;
+    font-size: 11px;
+}
+
+.login-security span {
+    color: #d4af37;
+}
+
+.login-copyright {
+    color: #666666;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-presentation {
+        min-height: auto;
+        padding: 45px 30px;
+        border-right: none;
+        border-bottom: 1px solid #292929;
+    }
+
+    .login-presentation h1 {
+        font-size: 36px;
+    }
+
+    .login-footer-text {
+        margin-top: 30px;
+    }
+
+    .login-form-area {
+        min-height: auto;
+        padding: 45px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .login-presentation {
+        padding: 35px 22px;
+    }
+
+    .login-card-heading h2 {
+        font-size: 23px;
+    }
+}
