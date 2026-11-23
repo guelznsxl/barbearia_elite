@@ -1,1 +1,119 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos | Barbearia Elite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar">
+            <h2>Barbearia Elite</h2>
+
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/clientes">Clientes</a>
+                <a href="/barbeiros">Barbeiros</a>
+                <a href="/servicos">Serviços</a>
+                <a href="/agendamentos" class="active">Agendamentos</a>
+                <a href="/admin">Administração</a>
+            </nav>
+
+            <button id="btnSair">Sair</button>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="menuToggle">☰</button>
+                <h1>Gerenciar agendamentos</h1>
+            </header>
+
+            <section class="content">
+
+                <div class="page-heading">
+                    <h2>Agendamentos</h2>
+                    <p>Organize os horários e acompanhe os atendimentos.</p>
+                </div>
+
+                <div class="form-card">
+                    <h3>Novo agendamento</h3>
+
+                    <form id="formAgendamento">
+                        <input type="hidden" id="agendamentoId">
+
+                        <label for="agendamentoCliente">Cliente</label>
+                        <select id="agendamentoCliente" required>
+                            <option value="">Selecione um cliente</option>
+                        </select>
+
+                        <label for="agendamentoBarbeiro">Barbeiro</label>
+                        <select id="agendamentoBarbeiro" required>
+                            <option value="">Selecione um barbeiro</option>
+                        </select>
+
+                        <label for="agendamentoServico">Serviço</label>
+                        <select id="agendamentoServico" required>
+                            <option value="">Selecione um serviço</option>
+                        </select>
+
+                        <label for="agendamentoData">Data</label>
+                        <input type="date" id="agendamentoData" required>
+
+                        <label for="agendamentoHorario">Horário</label>
+                        <input type="time" id="agendamentoHorario" required>
+
+                        <label for="agendamentoStatus">Status</label>
+                        <select id="agendamentoStatus">
+                            <option value="Pendente">Pendente</option>
+                            <option value="Confirmado">Confirmado</option>
+                            <option value="Concluido">Concluído</option>
+                            <option value="Cancelado">Cancelado</option>
+                        </select>
+
+                        <button type="submit">Salvar agendamento</button>
+                    </form>
+
+                    <p id="mensagemAgendamento"></p>
+                </div>
+
+                <div class="table-card">
+                    <h3>Agendamentos cadastrados</h3>
+
+                    <button id="btnAtualizarAgendamentos" type="button">
+                        Atualizar lista
+                    </button>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Barbeiro</th>
+                                    <th>Serviço</th>
+                                    <th>Data</th>
+                                    <th>Horário</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelaAgendamentos">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
