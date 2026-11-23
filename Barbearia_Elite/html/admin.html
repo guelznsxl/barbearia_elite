@@ -1,1 +1,105 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração | Barbearia Elite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar">
+            <h2>Barbearia Elite</h2>
+
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/clientes">Clientes</a>
+                <a href="/barbeiros">Barbeiros</a>
+                <a href="/servicos">Serviços</a>
+                <a href="/agendamentos">Agendamentos</a>
+                <a href="/admin" class="active">Administração</a>
+            </nav>
+
+            <button id="btnSair">Sair</button>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="menuToggle">☰</button>
+                <h1>Painel administrativo</h1>
+            </header>
+
+            <section class="content">
+
+                <div class="page-heading">
+                    <h2>Administração</h2>
+                    <p>Gerencie e acompanhe as informações da Barbearia Elite.</p>
+                </div>
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card">
+                        <span>Total de clientes</span>
+                        <h2 id="adminTotalClientes">0</h2>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>Total de barbeiros</span>
+                        <h2 id="adminTotalBarbeiros">0</h2>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>Total de serviços</span>
+                        <h2 id="adminTotalServicos">0</h2>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>Total de agendamentos</span>
+                        <h2 id="adminTotalAgendamentos">0</h2>
+                    </div>
+
+                </div>
+
+                <div class="table-card">
+                    <h3>Gerenciamento do sistema</h3>
+
+                    <p>
+                        Utilize os atalhos abaixo para acessar as áreas de
+                        gerenciamento da barbearia.
+                    </p>
+
+                    <div class="admin-links">
+                        <a href="/clientes">Gerenciar clientes</a>
+                        <a href="/barbeiros">Gerenciar barbeiros</a>
+                        <a href="/servicos">Gerenciar serviços</a>
+                        <a href="/agendamentos">Gerenciar agendamentos</a>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <h3>Conta administrativa</h3>
+
+                    <p>
+                        Área destinada ao administrador responsável pelo sistema.
+                    </p>
+
+                    <button type="button" id="btnSairAdmin">
+                        Encerrar sessão
+                    </button>
+                </div>
+
+                <p id="mensagemAdmin"></p>
+
+            </section>
+        </main>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
