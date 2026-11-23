@@ -1,1 +1,100 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Barbearia Elite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar" id="sidebar">
+            <h2>Barbearia Elite</h2>
+
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/clientes">Clientes</a>
+                <a href="/barbeiros">Barbeiros</a>
+                <a href="/servicos" class="active">Serviços</a>
+                <a href="/agendamentos">Agendamentos</a>
+                <a href="/admin">Administração</a>
+            </nav>
+
+            <button id="btnSair">Sair</button>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="menuToggle">☰</button>
+                <h1>Gerenciar serviços</h1>
+            </header>
+
+            <section class="content">
+
+                <div class="page-heading">
+                    <h2>Cadastro de serviços</h2>
+                    <p>Gerencie os serviços oferecidos pela barbearia.</p>
+                </div>
+
+                <div class="form-card">
+                    <h3>Novo serviço</h3>
+
+                    <form id="formServico">
+                        <input type="hidden" id="servicoId">
+
+                        <label for="servicoNome">Nome do serviço</label>
+                        <input type="text" id="servicoNome" required>
+
+                        <label for="servicoDescricao">Descrição</label>
+                        <textarea id="servicoDescricao" rows="3"></textarea>
+
+                        <label for="servicoPreco">Preço (R$)</label>
+                        <input type="number" id="servicoPreco" step="0.01" min="0" required>
+
+                        <label for="servicoDuracao">Duração (minutos)</label>
+                        <input type="number" id="servicoDuracao" min="1" required>
+
+                        <button type="submit">Salvar serviço</button>
+                    </form>
+
+                    <p id="mensagemServico"></p>
+                </div>
+
+                <div class="table-card">
+                    <h3>Serviços cadastrados</h3>
+
+                    <button id="btnAtualizarServicos" type="button">
+                        Atualizar lista
+                    </button>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Serviço</th>
+                                    <th>Descrição</th>
+                                    <th>Preço</th>
+                                    <th>Duração</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelaServicos">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
