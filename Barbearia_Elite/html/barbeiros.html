@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,87 +9,195 @@
 </head>
 <body>
 
-    <div class="layout">
+<div class="app-shell">
 
-        <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">BE</div>
             <h2>Barbearia Elite</h2>
+        </div>
 
-            <nav>
-                <a href="/">Dashboard</a>
-                <a href="/clientes">Clientes</a>
-                <a href="/barbeiros" class="active">Barbeiros</a>
-                <a href="/servicos">Serviços</a>
-                <a href="/agendamentos">Agendamentos</a>
-                <a href="/admin">Administração</a>
-            </nav>
+        <p class="side-label">MENU PRINCIPAL</p>
 
-            <button id="btnSair">Sair</button>
-        </aside>
+        <nav class="side-nav">
+            <a href="/" class="nav-link">
+                <span class="nav-icon">⌂</span>
+                Visão Geral
+            </a>
 
-        <main class="main-content">
-            <header class="topbar">
-                <button id="menuToggle">☰</button>
-                <h1>Gerenciar barbeiros</h1>
-            </header>
+            <a href="/clientes" class="nav-link">
+                <span class="nav-icon">♙</span>
+                Clientes
+            </a>
 
-            <section class="content">
+            <a href="/barbeiros" class="nav-link active">
+                <span class="nav-icon">✂</span>
+                Barbeiros
+            </a>
 
-                <div class="page-heading">
-                    <h2>Cadastro de barbeiros</h2>
-                    <p>Cadastre e gerencie os profissionais da barbearia.</p>
+            <a href="/servicos" class="nav-link">
+                <span class="nav-icon">◇</span>
+                Serviços
+            </a>
+
+            <a href="/agendamentos" class="nav-link">
+                <span class="nav-icon">▦</span>
+                Agendamentos
+            </a>
+
+            <a href="/admin" class="nav-link">
+                <span class="nav-icon">⚙</span>
+                Administração
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="btnSair" class="btn btn-secondary">
+                Sair do sistema
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main-area">
+
+        <header class="topbar">
+            <button id="menuToggle" class="mobile-menu">☰</button>
+
+            <div>
+                <p class="eyebrow">GESTÃO DA BARBEARIA</p>
+                <h1>Barbeiros</h1>
+            </div>
+
+            <div class="topbar-right">
+                <span class="live-pill">● Sistema online</span>
+                <div class="top-avatar">BE</div>
+            </div>
+        </header>
+
+        <section class="content">
+
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">EQUIPE PROFISSIONAL</p>
+                    <h2>Gerenciar barbeiros</h2>
+                    <p class="muted">
+                        Cadastre e organize os profissionais da Barbearia Elite.
+                    </p>
                 </div>
+            </div>
 
-                <div class="form-card">
-                    <h3>Novo barbeiro</h3>
+            <div class="panel-card">
 
-                    <form id="formBarbeiro">
-                        <input type="hidden" id="barbeiroId">
-
-                        <label for="barbeiroNome">Nome completo</label>
-                        <input type="text" id="barbeiroNome" required>
-
-                        <label for="barbeiroTelefone">Telefone</label>
-                        <input type="text" id="barbeiroTelefone" required>
-
-                        <label for="barbeiroEspecialidade">Especialidade</label>
-                        <input type="text" id="barbeiroEspecialidade" required>
-
-                        <button type="submit">Salvar barbeiro</button>
-                    </form>
-
-                    <p id="mensagemBarbeiro"></p>
-                </div>
-
-                <div class="table-card">
-                    <h3>Barbeiros cadastrados</h3>
-
-                    <button id="btnAtualizarBarbeiros" type="button">
-                        Atualizar lista
-                    </button>
-
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Telefone</th>
-                                    <th>Especialidade</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="tabelaBarbeiros">
-                            </tbody>
-                        </table>
+                <div class="section-heading">
+                    <div>
+                        <h3>Novo barbeiro</h3>
+                        <p class="muted">Preencha os dados do profissional.</p>
                     </div>
+
+                    <div class="stat-icon">✂</div>
                 </div>
 
-            </section>
-        </main>
+                <form id="formBarbeiro">
 
-    </div>
+                    <input type="hidden" id="barbeiroId">
 
-    <script src="/js/script.js"></script>
+                    <div class="form-grid">
+
+                        <div>
+                            <label for="barbeiroNome">Nome completo</label>
+                            <input
+                                type="text"
+                                id="barbeiroNome"
+                                placeholder="Digite o nome do barbeiro"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label for="barbeiroTelefone">Telefone</label>
+                            <input
+                                type="text"
+                                id="barbeiroTelefone"
+                                placeholder="Digite o telefone"
+                                required
+                            >
+                        </div>
+
+                        <div class="full-field">
+                            <label for="barbeiroEspecialidade">Especialidade</label>
+                            <input
+                                type="text"
+                                id="barbeiroEspecialidade"
+                                placeholder="Ex.: Corte masculino, barba, degradê..."
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Salvar barbeiro
+                        </button>
+                    </div>
+
+                    <p id="mensagemBarbeiro" class="feedback"></p>
+
+                </form>
+
+            </div>
+
+            <div class="panel-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h3>Barbeiros cadastrados</h3>
+                        <p class="muted">
+                            Consulte os profissionais registrados no sistema.
+                        </p>
+                    </div>
+
+                    <button
+                        id="btnAtualizarBarbeiros"
+                        type="button"
+                        class="btn btn-secondary"
+                    >
+                        ↻ Atualizar lista
+                    </button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Especialidade</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabelaBarbeiros"></tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="app-footer">
+            © 2026 Barbearia Elite · Sistema de Gestão
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/js/script.js"></script>
+
 </body>
 </html>
-
