@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,97 +9,227 @@
 </head>
 <body>
 
-    <div class="layout">
+    <div class="app-shell">
 
         <aside class="sidebar" id="sidebar">
-            <h2>Barbearia Elite</h2>
 
-            <nav>
-                <a href="/">Dashboard</a>
-                <a href="/clientes">Clientes</a>
-                <a href="/barbeiros">Barbeiros</a>
-                <a href="/servicos">Serviços</a>
-                <a href="/agendamentos">Agendamentos</a>
-                <a href="/admin" class="active">Administração</a>
+            <div class="brand">
+                <div class="brand-mark">BE</div>
+                <div>
+                    <h2>BARBEARIA</h2>
+                    <span>ELITE</span>
+                </div>
+            </div>
+
+            <p class="side-label">MENU PRINCIPAL</p>
+
+            <nav class="side-nav">
+                <a href="/" class="nav-link">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a href="/clientes" class="nav-link">
+                    <span class="nav-icon">♙</span>
+                    Clientes
+                </a>
+
+                <a href="/barbeiros" class="nav-link">
+                    <span class="nav-icon">✂</span>
+                    Barbeiros
+                </a>
+
+                <a href="/servicos" class="nav-link">
+                    <span class="nav-icon">◇</span>
+                    Serviços
+                </a>
+
+                <a href="/agendamentos" class="nav-link">
+                    <span class="nav-icon">▣</span>
+                    Agendamentos
+                </a>
+
+                <a href="/admin" class="nav-link active">
+                    <span class="nav-icon">⚙</span>
+                    Administração
+                </a>
             </nav>
 
-            <button id="btnSair">Sair</button>
+            <div class="sidebar-bottom">
+                <div class="admin-avatar">AD</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Gestão do sistema</span>
+                </div>
+                <button id="btnSair" type="button">Sair</button>
+            </div>
+
         </aside>
 
-        <main class="main-content">
+        <main class="main-area">
 
             <header class="topbar">
-                <button id="menuToggle">☰</button>
-                <h1>Painel administrativo</h1>
+                <div>
+                    <button id="menuToggle" type="button">☰</button>
+                    <span class="topbar-title">Painel administrativo</span>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="live-pill">● Sistema online</span>
+                    <div class="top-avatar">BE</div>
+                </div>
             </header>
 
             <section class="content">
 
                 <div class="page-heading">
-                    <h2>Administração</h2>
-                    <p>Gerencie e acompanhe as informações da Barbearia Elite.</p>
+                    <div>
+                        <span class="eyebrow">CONTROLE DO SISTEMA</span>
+                        <h1>Administração</h1>
+                        <p class="muted">Gerencie e acompanhe as informações da Barbearia Elite.</p>
+                    </div>
                 </div>
 
-                <div class="dashboard-cards">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">VISÃO GERAL</span>
+                        <h2>Resumo do sistema</h2>
+                        <p class="muted">Acompanhe os principais números da barbearia.</p>
+                    </div>
+                </div>
 
-                    <div class="dashboard-card">
-                        <span>Total de clientes</span>
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total de clientes</span>
+                            <div class="stat-icon">♙</div>
+                        </div>
                         <h2 id="adminTotalClientes">0</h2>
+                        <p class="muted">Clientes cadastrados</p>
                     </div>
 
-                    <div class="dashboard-card">
-                        <span>Total de barbeiros</span>
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total de barbeiros</span>
+                            <div class="stat-icon">✂</div>
+                        </div>
                         <h2 id="adminTotalBarbeiros">0</h2>
+                        <p class="muted">Profissionais cadastrados</p>
                     </div>
 
-                    <div class="dashboard-card">
-                        <span>Total de serviços</span>
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span>Total de serviços</span>
+                            <div class="stat-icon">◇</div>
+                        </div>
                         <h2 id="adminTotalServicos">0</h2>
+                        <p class="muted">Serviços disponíveis</p>
                     </div>
 
-                    <div class="dashboard-card">
-                        <span>Total de agendamentos</span>
+                    <div class="stat-card stat-featured">
+                        <div class="stat-top">
+                            <span>Total de agendamentos</span>
+                            <div class="stat-icon">▣</div>
+                        </div>
                         <h2 id="adminTotalAgendamentos">0</h2>
+                        <p>Atendimentos registrados</p>
                     </div>
 
                 </div>
 
-                <div class="table-card">
-                    <h3>Gerenciamento do sistema</h3>
+                <div class="panel-card">
 
-                    <p>
-                        Utilize os atalhos abaixo para acessar as áreas de
-                        gerenciamento da barbearia.
-                    </p>
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">ACESSO RÁPIDO</span>
+                            <h2>Gerenciamento do sistema</h2>
+                            <p class="muted">Acesse diretamente as áreas de gerenciamento.</p>
+                        </div>
 
-                    <div class="admin-links">
-                        <a href="/clientes">Gerenciar clientes</a>
-                        <a href="/barbeiros">Gerenciar barbeiros</a>
-                        <a href="/servicos">Gerenciar serviços</a>
-                        <a href="/agendamentos">Gerenciar agendamentos</a>
+                        <div class="stat-icon">⚙</div>
                     </div>
+
+                    <div class="quick-grid">
+
+                        <a href="/clientes" class="quick-card">
+                            <div class="quick-icon">♙</div>
+                            <div>
+                                <strong>Gerenciar clientes</strong>
+                                <p>Consultar e cadastrar clientes</p>
+                            </div>
+                            <span class="quick-arrow">→</span>
+                        </a>
+
+                        <a href="/barbeiros" class="quick-card">
+                            <div class="quick-icon">✂</div>
+                            <div>
+                                <strong>Gerenciar barbeiros</strong>
+                                <p>Controlar os profissionais</p>
+                            </div>
+                            <span class="quick-arrow">→</span>
+                        </a>
+
+                        <a href="/servicos" class="quick-card">
+                            <div class="quick-icon">◇</div>
+                            <div>
+                                <strong>Gerenciar serviços</strong>
+                                <p>Organizar serviços e preços</p>
+                            </div>
+                            <span class="quick-arrow">→</span>
+                        </a>
+
+                        <a href="/agendamentos" class="quick-card">
+                            <div class="quick-icon">▣</div>
+                            <div>
+                                <strong>Gerenciar agendamentos</strong>
+                                <p>Controlar horários e atendimentos</p>
+                            </div>
+                            <span class="quick-arrow">→</span>
+                        </a>
+
+                    </div>
+
                 </div>
 
-                <div class="table-card">
-                    <h3>Conta administrativa</h3>
+                <div class="panel-card">
 
-                    <p>
-                        Área destinada ao administrador responsável pelo sistema.
-                    </p>
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">SEGURANÇA</span>
+                            <h2>Conta administrativa</h2>
+                            <p class="muted">Área destinada ao administrador responsável pelo sistema.</p>
+                        </div>
 
-                    <button type="button" id="btnSairAdmin">
-                        Encerrar sessão
-                    </button>
+                        <div class="stat-icon">♙</div>
+                    </div>
+
+                    <div class="admin-account">
+                        <div>
+                            <strong>Administrador do sistema</strong>
+                            <p class="muted">Sua sessão está ativa.</p>
+                        </div>
+
+                        <button type="button" id="btnSairAdmin" class="btn btn-primary">
+                            Encerrar sessão
+                        </button>
+                    </div>
+
                 </div>
 
-                <p id="mensagemAdmin"></p>
+                <p id="mensagemAdmin" class="feedback"></p>
+
+                <footer class="app-footer">
+                    © 2026 Barbearia Elite · Sistema de Gestão
+                </footer>
 
             </section>
+
         </main>
 
     </div>
 
     <script src="/js/script.js"></script>
+
 </body>
 </html>
-
