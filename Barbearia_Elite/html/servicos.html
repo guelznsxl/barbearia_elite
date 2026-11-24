@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,70 +9,155 @@
 </head>
 <body>
 
-    <div class="layout">
+    <div class="app-shell">
 
         <aside class="sidebar" id="sidebar">
-            <h2>Barbearia Elite</h2>
 
-            <nav>
-                <a href="/">Dashboard</a>
-                <a href="/clientes">Clientes</a>
-                <a href="/barbeiros">Barbeiros</a>
-                <a href="/servicos" class="active">Serviços</a>
-                <a href="/agendamentos">Agendamentos</a>
-                <a href="/admin">Administração</a>
+            <div class="brand">
+                <div class="brand-mark">BE</div>
+                <div>
+                    <h2>BARBEARIA</h2>
+                    <span>ELITE</span>
+                </div>
+            </div>
+
+            <p class="side-label">MENU PRINCIPAL</p>
+
+            <nav class="side-nav">
+                <a href="/" class="nav-link">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a href="/clientes" class="nav-link">
+                    <span class="nav-icon">♙</span>
+                    Clientes
+                </a>
+
+                <a href="/barbeiros" class="nav-link">
+                    <span class="nav-icon">✂</span>
+                    Barbeiros
+                </a>
+
+                <a href="/servicos" class="nav-link active">
+                    <span class="nav-icon">◇</span>
+                    Serviços
+                </a>
+
+                <a href="/agendamentos" class="nav-link">
+                    <span class="nav-icon">▣</span>
+                    Agendamentos
+                </a>
+
+                <a href="/admin" class="nav-link">
+                    <span class="nav-icon">⚙</span>
+                    Administração
+                </a>
             </nav>
 
-            <button id="btnSair">Sair</button>
+            <div class="sidebar-bottom">
+                <div class="admin-avatar">AD</div>
+                <div>
+                    <strong>Administrador</strong>
+                    <span>Gestão do sistema</span>
+                </div>
+                <button id="btnSair" type="button">Sair</button>
+            </div>
+
         </aside>
 
-        <main class="main-content">
+        <main class="main-area">
 
             <header class="topbar">
-                <button id="menuToggle">☰</button>
-                <h1>Gerenciar serviços</h1>
+                <div>
+                    <button id="menuToggle" type="button">☰</button>
+                    <span class="topbar-title">Gerenciar serviços</span>
+                </div>
+
+                <div class="topbar-right">
+                    <span class="live-pill">● Sistema online</span>
+                    <div class="top-avatar">BE</div>
+                </div>
             </header>
 
             <section class="content">
 
                 <div class="page-heading">
-                    <h2>Cadastro de serviços</h2>
-                    <p>Gerencie os serviços oferecidos pela barbearia.</p>
+                    <div>
+                        <span class="eyebrow">GESTÃO DA BARBEARIA</span>
+                        <h1>Serviços</h1>
+                        <p class="muted">Cadastre e gerencie os serviços oferecidos pela barbearia.</p>
+                    </div>
                 </div>
 
-                <div class="form-card">
-                    <h3>Novo serviço</h3>
+                <div class="panel-card">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">CADASTRO</span>
+                            <h2>Novo serviço</h2>
+                            <p class="muted">Preencha os dados para cadastrar um serviço.</p>
+                        </div>
+
+                        <div class="stat-icon">◇</div>
+                    </div>
 
                     <form id="formServico">
+
                         <input type="hidden" id="servicoId">
 
-                        <label for="servicoNome">Nome do serviço</label>
-                        <input type="text" id="servicoNome" required>
+                        <div class="form-grid">
 
-                        <label for="servicoDescricao">Descrição</label>
-                        <textarea id="servicoDescricao" rows="3"></textarea>
+                            <div class="form-group">
+                                <label for="servicoNome">Nome do serviço</label>
+                                <input type="text" id="servicoNome" placeholder="Ex: Corte masculino" required>
+                            </div>
 
-                        <label for="servicoPreco">Preço (R$)</label>
-                        <input type="number" id="servicoPreco" step="0.01" min="0" required>
+                            <div class="form-group">
+                                <label for="servicoPreco">Preço (R$)</label>
+                                <input type="number" id="servicoPreco" placeholder="Ex: 35.00" step="0.01" min="0" required>
+                            </div>
 
-                        <label for="servicoDuracao">Duração (minutos)</label>
-                        <input type="number" id="servicoDuracao" min="1" required>
+                            <div class="form-group full-field">
+                                <label for="servicoDescricao">Descrição</label>
+                                <textarea id="servicoDescricao" rows="3" placeholder="Descreva os detalhes do serviço..."></textarea>
+                            </div>
 
-                        <button type="submit">Salvar serviço</button>
+                            <div class="form-group">
+                                <label for="servicoDuracao">Duração (minutos)</label>
+                                <input type="number" id="servicoDuracao" placeholder="Ex: 30" min="1" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                Salvar serviço
+                            </button>
+                        </div>
+
                     </form>
 
-                    <p id="mensagemServico"></p>
+                    <p id="mensagemServico" class="feedback"></p>
+
                 </div>
 
-                <div class="table-card">
-                    <h3>Serviços cadastrados</h3>
+                <div class="panel-card">
 
-                    <button id="btnAtualizarServicos" type="button">
-                        Atualizar lista
-                    </button>
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">LISTAGEM</span>
+                            <h2>Serviços cadastrados</h2>
+                            <p class="muted">Consulte, edite e organize os serviços da barbearia.</p>
+                        </div>
 
-                    <div class="table-container">
-                        <table>
+                        <button id="btnAtualizarServicos" type="button" class="btn">
+                            ↻ Atualizar lista
+                        </button>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Serviço</th>
@@ -87,14 +172,20 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
 
+                <footer class="app-footer">
+                    © 2026 Barbearia Elite · Sistema de Gestão
+                </footer>
+
             </section>
+
         </main>
 
     </div>
 
     <script src="/js/script.js"></script>
+
 </body>
 </html>
-
