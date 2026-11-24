@@ -1028,3 +1028,345 @@ body.login-body {
         font-size: 23px;
     }
 }
+
+/* ==========================================
+   BARBEARIA ELITE - VISUAL PREMIUM
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --preto: #090909;
+    --preto-2: #101010;
+    --preto-3: #171717;
+    --grafite: #202020;
+    --dourado: #c9a64c;
+    --dourado-claro: #e4c675;
+    --branco: #f4f1e9;
+    --texto: #c5c5c5;
+    --texto-fraco: #858585;
+    --borda: rgba(255,255,255,0.08);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--preto);
+    color: var(--texto);
+    letter-spacing: 0.1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--branco);
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}
+
+p, label, input, button, select, textarea, a, td, th {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+    background: #0c0c0c;
+    border-right: 1px solid var(--borda);
+    padding: 28px 18px;
+}
+
+.brand {
+    border-bottom: 1px solid var(--borda);
+}
+
+.brand h1,
+.brand h2,
+.brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+.brand-mark {
+    background: linear-gradient(145deg, #e4c675, #a9822e);
+    box-shadow: 0 5px 20px rgba(201,166,76,0.15);
+}
+
+.nav-link,
+.sidebar nav a {
+    border-radius: 8px;
+    padding: 13px 15px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover,
+.sidebar nav a:hover,
+.nav-link.active,
+.sidebar nav a.active {
+    background: rgba(201,166,76,0.10);
+    color: var(--dourado-claro);
+}
+
+/* CABECALHO */
+
+.topbar {
+    background: #0c0c0c;
+    border-bottom: 1px solid var(--borda);
+    padding: 20px 35px;
+}
+
+.topbar h1,
+.topbar h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* CONTEUDO */
+
+.content {
+    padding: 38px;
+    max-width: 1600px;
+}
+
+.page-heading {
+    margin-bottom: 32px;
+}
+
+.page-heading h1,
+.page-heading h2 {
+    font-size: 30px;
+}
+
+.eyebrow {
+    color: var(--dourado);
+    letter-spacing: 2.5px;
+    font-size: 10px;
+}
+
+/* CARDS */
+
+.panel-card,
+.form-card,
+.table-card,
+.stat-card,
+.dashboard-card {
+    background: linear-gradient(145deg, #151515, #101010);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.16);
+}
+
+.panel-card,
+.form-card,
+.table-card {
+    padding: 26px;
+}
+
+.stat-card,
+.dashboard-card {
+    padding: 24px;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.stat-card:hover,
+.dashboard-card:hover {
+    border-color: rgba(201,166,76,0.45);
+    transform: translateY(-3px);
+}
+
+.stat-card h2,
+.stat-card strong,
+.dashboard-card h2 {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dourado-claro);
+    font-size: 29px;
+    font-weight: 700;
+}
+
+/* FORMULARIOS */
+
+input,
+select,
+textarea {
+    background: #191919;
+    color: var(--branco);
+    border: 1px solid #333;
+    border-radius: 9px;
+    padding: 14px 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #555;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(201,166,76,0.09);
+}
+
+label {
+    font-size: 13px;
+    color: #d2d2d2;
+    font-weight: 600;
+}
+
+/* BOTOES */
+
+.btn,
+button[type="submit"] {
+    border-radius: 9px;
+    padding: 13px 19px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.btn-primary,
+.btn:not(.btn-secondary):not(.btn-danger):not(.btn-success) {
+    background: linear-gradient(135deg, #e0c16d, #b38c35);
+    color: #111;
+}
+
+.btn-primary:hover,
+.btn:not(.btn-secondary):not(.btn-danger):not(.btn-success):hover {
+    background: linear-gradient(135deg, #f0d98d, #c9a64c);
+    transform: translateY(-2px);
+}
+
+/* TABELAS */
+
+table {
+    border-spacing: 0;
+}
+
+thead {
+    background: #1b1b1b;
+}
+
+th {
+    color: var(--dourado-claro);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 17px 15px;
+}
+
+td {
+    padding: 17px 15px;
+    color: #d0d0d0;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: rgba(201,166,76,0.045);
+}
+
+/* ATALHOS */
+
+.quick-card {
+    background: #131313;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    padding: 21px;
+    transition: all 0.25s ease;
+}
+
+.quick-card:hover {
+    background: #19160f;
+    border-color: rgba(201,166,76,0.5);
+    transform: translateY(-3px);
+}
+
+.quick-card h3 {
+    font-size: 16px;
+}
+
+/* LOGIN */
+
+.login-presentation {
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(201,166,76,0.12), transparent 50%),
+        linear-gradient(145deg, #171717, #080808);
+}
+
+.login-presentation h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(40px, 4.5vw, 62px);
+    line-height: 1.12;
+}
+
+.login-card {
+    background: linear-gradient(145deg, #181818, #101010);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+}
+
+.login-card-heading h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+}
+
+.login-button {
+    background: linear-gradient(135deg, #e0c16d, #b38c35);
+    border-radius: 9px;
+    font-weight: 800;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #f0d98d, #c9a64c);
+    box-shadow: 0 8px 25px rgba(201,166,76,0.15);
+}
+
+/* RODAPE */
+
+.app-footer {
+    border-top: 1px solid var(--borda);
+    color: var(--texto-fraco);
+    letter-spacing: 0.3px;
+}
+
+/* BARRA DE ROLAGEM */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #514326;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dourado);
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+    .content {
+        padding: 22px 16px;
+    }
+
+    .page-heading h1,
+    .page-heading h2 {
+        font-size: 25px;
+    }
+
+    .login-presentation h1 {
+        font-size: 39px;
+    }
+}
