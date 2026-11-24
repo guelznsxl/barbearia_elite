@@ -2057,3 +2057,89 @@ table td button:hover {
     }
 }
 
+/* =====================================
+   BARBEARIA ELITE - FONTE PADRAO GLOBAL
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    font-family: 'DM Sans', sans-serif;
+}
+
+html,
+body,
+* {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* titulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 800;
+}
+
+/* textos */
+p, span, label, small, strong, b, a, li {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* botoes e formularios */
+button,
+input,
+select,
+textarea,
+option {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 500;
+}
+
+/* menus */
+.sidebar,
+.sidebar *,
+.side-nav,
+.nav-link,
+.topbar,
+.topbar * {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* tabelas */
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* logo */
+.brand,
+.brand *,
+.brand-mark,
+.brand-info,
+.brand-info h2,
+.brand-info span {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+.brand-info h2 {
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.brand-info span {
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+/* evita fontes diferentes em elementos especiais */
+i,
+em,
+strong,
+code,
+pre {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
