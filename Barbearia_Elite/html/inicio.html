@@ -14,72 +14,207 @@
         }
 
         body {
-            background: #111;
-            color: white;
             font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
             min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: space-between;
+            background: #111;
+            border-bottom: 1px solid #292929;
         }
 
-        .container {
-            text-align: center;
-            padding: 30px;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
 
-        .logo {
-            font-size: 30px;
+        .brand-mark {
+            width: 45px;
+            height: 45px;
+            background: #c9a044;
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 50px;
+            border-radius: 7px;
         }
 
-        .logo span {
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .brand-text b {
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .brand-text small {
             color: #c9a044;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
         }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #aaa;
-            margin-bottom: 35px;
-        }
-
-        a {
-            display: inline-block;
+        .btn-entrar {
             background: #c9a044;
             color: #111;
             text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 6px;
+            padding: 12px 25px;
+            border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        a:hover {
+        .btn-entrar:hover {
             background: #e0b85c;
+            transform: translateY(-2px);
+        }
+
+        main {
+            min-height: calc(100vh - 150px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .conteudo {
+            max-width: 750px;
+        }
+
+        .destaque {
+            color: #c9a044;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: #c9a044;
+        }
+
+        .descricao {
+            color: #aaa;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .btn-principal {
+            display: inline-block;
+            background: #c9a044;
+            color: #111;
+            padding: 16px 38px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-principal:hover {
+            background: #e0b85c;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 12px;
+            border-top: 1px solid #292929;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .brand-text b {
+                font-size: 13px;
+            }
+
+            .btn-entrar {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <header>
 
-        <div class="logo">
-            BARBEARIA <span>ELITE</span>
+        <a class="brand" href="/">
+            <span class="brand-mark">BE</span>
+
+            <span class="brand-text">
+                <b>BARBEARIA</b>
+                <small>ELITE</small>
+            </span>
+        </a>
+
+        <a href="/painel" class="btn-entrar">ENTRAR</a>
+
+    </header>
+
+    <main>
+
+        <div class="conteudo">
+
+            <div class="destaque">
+                SISTEMA DE GERENCIAMENTO
+            </div>
+
+            <h1>
+                BEM-VINDO À<br>
+                <span>BARBEARIA ELITE</span>
+            </h1>
+
+            <p class="descricao">
+                Gerencie clientes, barbeiros, serviços e agendamentos
+                em um só lugar. Um sistema completo para facilitar
+                a administração da sua barbearia.
+            </p>
+
+            <a href="/painel" class="btn-principal">
+                ACESSAR SISTEMA
+            </a>
+
         </div>
 
-        <h1>Bem-vindo à Barbearia Elite</h1>
+    </main>
 
-        <p>Sistema de gerenciamento da barbearia.</p>
-
-        <a href="/painel">ENTRAR NO SISTEMA</a>
-
-    </div>
+    <footer>
+        BARBEARIA ELITE © 2026 — TODOS OS DIREITOS RESERVADOS
+    </footer>
 
 </body>
 </html>
-
