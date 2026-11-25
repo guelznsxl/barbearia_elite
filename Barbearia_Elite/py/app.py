@@ -1,10 +1,7 @@
 
-from flask import Flask, render_template, request, jsonify, send_from_directory, redirect, session
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from pathlib import Path
-from functools import wraps
-from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
-import os
 
 from database import criar_banco
 from daos import ClienteDAO, BarbeiroDAO, ServicoDAO, AgendamentoDAO
@@ -19,24 +16,6 @@ app = Flask(
     template_folder=str(PASTA_PROJETO / "html"),
     static_folder=None
 )
-
-app.secret_key = os.environ.get("SECRET_KEY", "chave-local-de-desenvolvimento")
-
-app.config["SESSION_COOKIE_HTTPONLY"] = True
-app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
-app.config["SESSION_COOKIE_SECURE"] = os.environ.get("RENDER") is not None
-
-# dados do administrador
-ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
-ADMIN_PASSWORD_HASH = os.environ.get("ADMIN_PASSWORD_HASH")
-
-if ADMIN_PASSWORD_HASH:
-    SENHA_ADMIN_HASH = ADMIN_PASSWORD_HASH
-elif ADMIN_PASSWORD:
-    SENHA_ADMIN_HASH = generate_password_hash(ADMIN_PASSWORD)
-else:
-    SENHA_ADMIN_HASH = None
 
 
 # conexao com os DAOs
@@ -58,98 +37,54 @@ def arquivos_js(arquivo):
     return send_from_directory(PASTA_PROJETO / "js", arquivo)
 
 
-# verificacao de acesso
-@app.before_request
-def proteger_apis():
-    if request.endpoint and request.endpoint.startswith("api_"):
-        if not session.get("admin_logado"):
-            return jsonify({"erro": "Faça login para continuar."}), 401
-
-
-# pagina de login
-@app.route("/login", methods=["GET", "POST"])
-def login():
-
-    if request.method == "GET":
-        if session.get("admin_logado"):
-            return redirect("/")
-        return render_template("login.html")
-
-    dados = request.get_json() or {}
-
-    usuario = dados.get("usuario", "")
-    senha = dados.get("senha", "")
-
-    if not SENHA_ADMIN_HASH:
-        return jsonify({
-            "erro": "Configure a senha do administrador no ambiente do servidor."
-        }), 503
-
-    if (
-        usuario == ADMIN_USERNAME
-        and check_password_hash(SENHA_ADMIN_HASH, senha)
-    ):
-        session.clear()
-        session["admin_logado"] = True
-        session["usuario"] = usuario
-
-        return jsonify({
-            "mensagem": "Login realizado com sucesso."
-        })
-
-    return jsonify({"erro": "Usuário ou senha incorretos."}), 401
-
-
-# sair da conta
-@app.route("/logout", methods=["POST"])
-def logout():
-    session.clear()
-    return jsonify({"mensagem": "Sessão encerrada."})
-
-
 # pagina inicial
 @app.route("/")
 def inicio():
-    if not session.get("admin_logado"):
-        return redirect("/login")
+    return render_template("inicio.html")
 
+
+# painel principal
+@app.route("/painel")
+def painel():
     return render_template("index.html")
 
 
 # paginas do sistema
 @app.route("/clientes")
 def pagina_clientes():
-    if not session.get("admin_logado"):
-        return redirect("/login")
     return render_template("clientes.html")
 
 
 @app.route("/barbeiros")
 def pagina_barbeiros():
-    if not session.get("admin_logado"):
-        return redirect("/login")
     return render_template("barbeiros.html")
 
 
 @app.route("/servicos")
 def pagina_servicos():
-    if not session.get("admin_logado"):
-        return redirect("/login")
     return render_template("servicos.html")
 
 
 @app.route("/agendamentos")
 def pagina_agendamentos():
-    if not session.get("admin_logado"):
-        return redirect("/login")
     return render_template("agendamentos.html")
 
 
 @app.route("/admin")
 def pagina_admin():
-    if not session.get("admin_logado"):
-        return redirect("/login")
     return render_template("admin.html")
+
+
+# login desativado
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("inicio.html")
+
+
+# sair do sistema
+@app.route("/logout", methods=["POST"])
+def logout():
+    return jsonify({"mensagem": "Sessao encerrada."})
 
 
 # mensagens de erro
