@@ -13,7 +13,7 @@ PASTA_PROJETO = Path(__file__).resolve().parent.parent
 
 app = Flask(
     __name__,
-    template_folder=str(PASTA_PROJETO / "html"),
+    template_folder=str(PASTA_PROJETO),
     static_folder=None
 )
 
