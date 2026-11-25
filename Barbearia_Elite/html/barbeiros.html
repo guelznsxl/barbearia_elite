@@ -1,29 +1,35 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbeiros | Barbearia Elite</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+
+<body data-page="barbeiros">
 
 <div class="app-shell">
 
     <aside class="sidebar" id="sidebar">
 
-        <div class="brand">
-            <div class="brand-mark">BE</div>
-            <h2>Barbearia Elite</h2>
-        </div>
+        <a class="brand" href="/">
+            <span class="brand-mark">BE</span>
+
+            <div class="brand-info">
+                <h2>BARBEARIA</h2>
+                <span>ELITE</span>
+            </div>
+        </a>
 
         <p class="side-label">MENU PRINCIPAL</p>
 
         <nav class="side-nav">
+
             <a href="/" class="nav-link">
                 <span class="nav-icon">⌂</span>
-                Visão Geral
+                Visão geral
             </a>
 
             <a href="/clientes" class="nav-link">
@@ -50,6 +56,7 @@
                 <span class="nav-icon">⚙</span>
                 Administração
             </a>
+
         </nav>
 
         <div class="sidebar-bottom">
@@ -63,6 +70,7 @@
     <main class="main-area">
 
         <header class="topbar">
+
             <button id="menuToggle" class="mobile-menu">☰</button>
 
             <div>
@@ -74,6 +82,7 @@
                 <span class="live-pill">● Sistema online</span>
                 <div class="top-avatar">BE</div>
             </div>
+
         </header>
 
         <section class="content">
@@ -169,6 +178,7 @@
                 </div>
 
                 <div class="table-wrapper">
+
                     <table class="data-table">
 
                         <thead>
@@ -183,6 +193,7 @@
                         <tbody id="tabelaBarbeiros"></tbody>
 
                     </table>
+
                 </div>
 
             </div>
