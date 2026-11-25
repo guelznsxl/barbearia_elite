@@ -1,5 +1,5 @@
 
-// elementos gerais
+ // elementos gerais
 const menuToggle = document.getElementById("menuToggle");
 const sidebar = document.getElementById("sidebar");
 const btnSair = document.getElementById("btnSair");
@@ -47,10 +47,16 @@ async function enviarDados(url, metodo, dados) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(dados)
+        body: dados ? JSON.stringify(dados) : undefined
     });
 
-    const resultado = await resposta.json();
+    let resultado = {};
+
+    try {
+        resultado = await resposta.json();
+    } catch (erro) {
+        resultado = {};
+    }
 
     if (!resposta.ok) {
         throw new Error(resultado.erro || resultado.mensagem || "Erro na operação");
@@ -87,10 +93,13 @@ if (formLogin) {
                 senha: senha
             });
 
-            mensagem.textContent = resultado.mensagem || "Login realizado!";
+            if (mensagem) {
+                mensagem.textContent = resultado.mensagem || "Login realizado!";
+            }
+
             window.location.href = "/";
         } catch (erro) {
-            mensagem.textContent = erro.message;
+            if (mensagem) mensagem.textContent = erro.message;
         }
     });
 }
@@ -131,13 +140,33 @@ carregarResumo();
 const formCliente = document.getElementById("formCliente");
 
 async function carregarClientes() {
+    const tabela = document.getElementById("tabelaClientes") ||
+                   document.getElementById("listaClientes");
+
+    if (!tabela) return;
+
+    tabela.innerHTML = `
+        <tr>
+            <td colspan="4" class="empty-cell">Carregando clientes...</td>
+        </tr>
+    `;
+
     try {
         const dados = await buscarDados("/api/clientes");
-        const tabela = document.getElementById("tabelaClientes");
-
-        if (!tabela) return;
 
         tabela.innerHTML = "";
+
+        const contador = document.getElementById("clientesCount");
+        if (contador) contador.textContent = `${dados.length} registros`;
+
+        if (dados.length === 0) {
+            tabela.innerHTML = `
+                <tr>
+                    <td colspan="4" class="empty-cell">Nenhum cliente cadastrado.</td>
+                </tr>
+            `;
+            return;
+        }
 
         dados.forEach(cliente => {
             tabela.innerHTML += `
@@ -155,6 +184,14 @@ async function carregarClientes() {
 
     } catch (erro) {
         console.log(erro);
+
+        tabela.innerHTML = `
+            <tr>
+                <td colspan="4" class="empty-cell">
+                    Erro ao carregar clientes: ${protegerTexto(erro.message)}
+                </td>
+            </tr>
+        `;
     }
 }
 
@@ -162,13 +199,17 @@ if (formCliente) {
     formCliente.addEventListener("submit", async evento => {
         evento.preventDefault();
 
-        const id = document.getElementById("clienteId").value;
+        const campoId = document.getElementById("clienteId");
+        const id = campoId ? campoId.value : "";
 
         const dados = {
-            nome: document.getElementById("clienteNome").value,
-            telefone: document.getElementById("clienteTelefone").value,
-            email: document.getElementById("clienteEmail").value
+            nome: document.getElementById("clienteNome").value.trim(),
+            telefone: document.getElementById("clienteTelefone").value.trim(),
+            email: document.getElementById("clienteEmail").value.trim()
         };
+
+        const mensagemCliente = document.getElementById("mensagemCliente") ||
+                                document.getElementById("mensagem");
 
         try {
             await enviarDados(
@@ -177,15 +218,23 @@ if (formCliente) {
                 dados
             );
 
-            document.getElementById("mensagemCliente").textContent = "Cliente salvo com sucesso!";
-            formCliente.reset();
-            document.getElementById("clienteId").value = "";
+            if (mensagemCliente) {
+                mensagemCliente.textContent = "Cliente salvo com sucesso!";
+            }
 
-            carregarClientes();
+            formCliente.reset();
+
+            if (campoId) campoId.value = "";
+
+            await carregarClientes();
             carregarResumo();
 
         } catch (erro) {
-            document.getElementById("mensagemCliente").textContent = erro.message;
+            if (mensagemCliente) {
+                mensagemCliente.textContent = erro.message;
+            } else {
+                alert(erro.message);
+            }
         }
     });
 }
@@ -196,10 +245,22 @@ async function editarCliente(id) {
 
     if (!cliente) return;
 
-    document.getElementById("clienteId").value = cliente.id;
+    let campoId = document.getElementById("clienteId");
+
+    if (!campoId && formCliente) {
+        campoId = document.createElement("input");
+        campoId.type = "hidden";
+        campoId.id = "clienteId";
+        formCliente.appendChild(campoId);
+    }
+
+    if (campoId) campoId.value = cliente.id;
+
     document.getElementById("clienteNome").value = cliente.nome;
     document.getElementById("clienteTelefone").value = cliente.telefone;
-    document.getElementById("clienteEmail").value = cliente.email;
+    document.getElementById("clienteEmail").value = cliente.email || "";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function excluirCliente(id) {
@@ -207,7 +268,7 @@ async function excluirCliente(id) {
 
     try {
         await enviarDados(`/api/clientes/${id}`, "DELETE");
-        carregarClientes();
+        await carregarClientes();
         carregarResumo();
     } catch (erro) {
         alert(erro.message);
@@ -220,7 +281,8 @@ if (btnAtualizarClientes) {
     btnAtualizarClientes.addEventListener("click", carregarClientes);
 }
 
-if (document.getElementById("tabelaClientes")) {
+if (document.getElementById("tabelaClientes") ||
+    document.getElementById("listaClientes")) {
     carregarClientes();
 }
 
