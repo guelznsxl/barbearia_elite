@@ -1246,3 +1246,156 @@ body.login-body,
 .brand::before {
     content: none !important;
 }
+
+/* =====================================
+   CORRECAO DA ESTRUTURA - BARBEARIA ELITE
+===================================== */
+
+/* estrutura principal */
+.app-shell,
+.layout {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-height: 100vh;
+}
+
+/* menu lateral */
+.sidebar {
+    display: flex !important;
+    flex: 0 0 255px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 255px !important;
+    min-width: 255px !important;
+    max-width: 255px !important;
+    min-height: 100vh;
+    height: auto;
+    padding: 20px 17px !important;
+    gap: 25px !important;
+    position: relative;
+}
+
+/* logo sempre no topo */
+.sidebar .brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 8px 25px !important;
+    gap: 13px !important;
+    order: 0;
+}
+
+/* quadrado BE */
+.sidebar .brand-mark {
+    display: flex !important;
+    flex: 0 0 45px !important;
+    width: 45px !important;
+    height: 45px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #f0d58a, #a88943) !important;
+    color: #080808 !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0 !important;
+}
+
+/* nome da barbearia */
+.sidebar .brand-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.sidebar .brand-info h2 {
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    letter-spacing: 2px !important;
+}
+
+.sidebar .brand-info span {
+    margin: 0 !important;
+    color: #d5b45c !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 4px !important;
+}
+
+/* menu organizado verticalmente */
+.sidebar .side-label {
+    order: 1;
+}
+
+.sidebar .side-nav,
+.sidebar nav {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    order: 2;
+}
+
+/* administrador sempre no final */
+.sidebar .sidebar-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto !important;
+    order: 3;
+}
+
+/* conteudo principal */
+.main-area,
+.main-content {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+/* evita que os paineis ultrapassem a tela */
+.content {
+    width: 100% !important;
+    max-width: 1600px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.panel-card,
+.form-card,
+.table-card {
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* celular */
+@media (max-width: 700px) {
+    .app-shell,
+    .layout {
+        display: block !important;
+    }
+
+    .sidebar {
+        display: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .sidebar.open {
+        display: flex !important;
+    }
+
+    .main-area,
+    .main-content {
+        width: 100% !important;
+    }
+}
