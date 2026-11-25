@@ -1195,3 +1195,54 @@ body.login-body,
         font-size: 9px;
     }
 }
+/* LOGO PADRÃO BARBEARIA ELITE */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.brand-mark {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0d58a, #a88943);
+    color: #080808 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-info h2 {
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.brand-info span {
+    color: #d5b45c !important;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+/* remove textos extras da logo */
+.brand::after,
+.brand::before {
+    content: none !important;
+}
