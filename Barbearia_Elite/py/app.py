@@ -40,7 +40,7 @@ def arquivos_js(arquivo):
 # pagina inicial
 @app.route("/")
 def inicio():
-    return render_template("inicio.html")
+    return render_template("html/inicio.html")
 
 
 # painel principal
@@ -52,33 +52,33 @@ def painel():
 # paginas do sistema
 @app.route("/clientes")
 def pagina_clientes():
-    return render_template("clientes.html")
+    return render_template("html/clientes.html")
 
 
 @app.route("/barbeiros")
 def pagina_barbeiros():
-    return render_template("barbeiros.html")
+    return render_template("html/barbeiros.html")
 
 
 @app.route("/servicos")
 def pagina_servicos():
-    return render_template("servicos.html")
+    return render_template("html/servicos.html")
 
 
 @app.route("/agendamentos")
 def pagina_agendamentos():
-    return render_template("agendamentos.html")
+    return render_template("html/agendamentos.html")
 
 
 @app.route("/admin")
 def pagina_admin():
-    return render_template("admin.html")
+    return render_template("html/admin.html")
 
 
 # login desativado
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("inicio.html")
+    return render_template("html/inicio.html")
 
 
 # sair do sistema
