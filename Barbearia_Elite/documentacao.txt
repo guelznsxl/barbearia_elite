@@ -18,12 +18,7 @@ Para utilizar as funcionalidades da Barbearia Elite, o usuário deve primeiro ac
 **Endereço do sistema:**  
 https://barbearia-elite-16b4.onrender.com/
 
-**Dados de acesso:**
-
-- **Login:** `admin`
-- **Senha:** `123projeto`
-
-Após preencher os campos de usuário e senha, o usuário deve clicar em **Acessar Sistema**. Com a autenticação realizada, será possível acessar as páginas e funcionalidades disponíveis no sistema.
+Ao acessar, basta apertar em acessar que ja estará dentro do sistema!
 
 ## 4. Objetivo geral
 
